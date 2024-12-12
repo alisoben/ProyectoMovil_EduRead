@@ -1,14 +1,16 @@
 package com.example.eduread.data.repository
 
 
+import com.example.eduread.data.model.request.LoginRequest
 import com.example.eduread.data.model.request.RegistrarUsuarioRequest
+import com.example.eduread.data.model.response.LoginResponse
 import com.example.eduread.data.model.response.RegistrarUsuarioResponse
 import com.example.eduread.network.RetrofitClient
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class AuthRepository {  // Cambié el nombre a AuthRepository para seguir las convenciones de Kotlin.
+class AuthRepository {
     fun registrarUsuario(nombre: String, clave: String, edad: Int, callback: (RegistrarUsuarioResponse?) -> Unit) {
         val registrarUsuarioRequest = RegistrarUsuarioRequest(
             nombre = nombre,
@@ -16,7 +18,7 @@ class AuthRepository {  // Cambié el nombre a AuthRepository para seguir las co
             edad = edad
         )
 
-        RetrofitClient.apiService.registrarUsuario(registrarUsuarioRequest).enqueue(object : Callback<RegistrarUsuarioResponse> {
+        RetrofitClient.apiService.registrar(registrarUsuarioRequest).enqueue(object : Callback<RegistrarUsuarioResponse> {
             override fun onResponse(call: Call<RegistrarUsuarioResponse>, response: Response<RegistrarUsuarioResponse>) {
                 // Verifica si la respuesta fue exitosa
                 if (response.isSuccessful) {
@@ -33,4 +35,17 @@ class AuthRepository {  // Cambié el nombre a AuthRepository para seguir las co
             }
         })
     }
+    fun loginUsuario(nombre: String, clave: String, callback: (LoginResponse?) -> Unit) {
+        val loginRequest = LoginRequest(nombre=nombre,clave=clave)
+        RetrofitClient.apiService.login(loginRequest).enqueue(object : Callback<LoginResponse> {
+
+            override fun onResponse(call: Call<LoginResponse>, response: Response<LoginResponse>) {
+                callback(response.body())
+            }
+            override fun onFailure(call: Call<LoginResponse>, t: Throwable) {
+                callback(null)
+            }
+        })
+    }
+
 }

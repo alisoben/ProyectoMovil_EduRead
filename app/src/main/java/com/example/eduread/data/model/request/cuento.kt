@@ -1,4 +1,4 @@
-package com.example.eduread.data.request
+package com.example.eduread.data.model.request
 
 import com.example.eduread.R
 
