@@ -20,17 +20,14 @@ class AuthRepository {
 
         RetrofitClient.apiService.registrar(registrarUsuarioRequest).enqueue(object : Callback<RegistrarUsuarioResponse> {
             override fun onResponse(call: Call<RegistrarUsuarioResponse>, response: Response<RegistrarUsuarioResponse>) {
-                // Verifica si la respuesta fue exitosa
                 if (response.isSuccessful) {
                     callback(response.body())
                 } else {
-                    // En caso de que la respuesta no sea exitosa, puedes manejar el error aquí
                     callback(null)
                 }
             }
 
             override fun onFailure(call: Call<RegistrarUsuarioResponse>, t: Throwable) {
-                // En caso de error en la comunicación de red
                 callback(null)
             }
         })
