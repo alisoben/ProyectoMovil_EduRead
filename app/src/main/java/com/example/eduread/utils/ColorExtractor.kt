@@ -1,4 +1,4 @@
-package com.example.eduread
+package com.example.eduread.utils
 
 import android.graphics.Color
 import android.graphics.drawable.BitmapDrawable
