@@ -30,8 +30,9 @@ class RegisterActivity : AppCompatActivity() {
         val ageEditText = findViewById<EditText>(R.id.ageEditText)
         val passwordEditText = findViewById<EditText>(R.id.passwordEditText)
         val registerButton = findViewById<Button>(R.id.registerButton)
+        val loginSubText = findViewById<TextView>(R.id.loginSubText)
 
-        // Listener del botón (sin lógica por ahora)
+        // Listener del botón Registrar
         registerButton.setOnClickListener {
             val nombre = usernameEditText.text.toString().trim()
             val edad = ageEditText.text.toString().toIntOrNull()
@@ -50,6 +51,12 @@ class RegisterActivity : AppCompatActivity() {
             } else {
                 Toast.makeText(this, "Por favor, llena todos los campos correctamente", Toast.LENGTH_SHORT).show()
             }
+        }
+        //Listener del iniciar sesion
+        loginSubText.setOnClickListener {
+            // Redirige al LoginActivity
+            val intent = Intent(this, LoginActivity::class.java)
+            startActivity(intent)
         }
 
         }

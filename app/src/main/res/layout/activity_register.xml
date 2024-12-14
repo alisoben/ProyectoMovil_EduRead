@@ -14,28 +14,35 @@
         android:id="@+id/headerBox"
         android:layout_width="match_parent"
         android:layout_height="150dp"
-        android:background="#0092E4"
+        android:background="@color/blue_base"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <!-- Título del formulario -->
-
-    <!-- Subtítulo del formulario -->
-
-
-    <!-- Campo de Nombre -->
-    <TextView
+    <!--<TextView
         android:id="@+id/titleText"
+        style="@style/RegisterTitleStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginTop="24dp"
         android:text="Registro"
-        android:textColor="@color/black"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.027"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/headerBox" />-->
+
+    <TextView
+        android:id="@+id/titleText"
+        style="@style/RegisterTitleStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="20dp"
+        android:text="Registro"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.023"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/headerBox" />
 
@@ -61,7 +68,6 @@
         android:layout_marginTop="24dp"
         android:layout_marginEnd="32dp"
         android:background="@drawable/rounded_edittext"
-        android:backgroundTint="@android:color/transparent"
         android:hint="Nombre"
         android:inputType="text"
         android:padding="12dp"
@@ -78,7 +84,6 @@
         android:layout_marginTop="24dp"
         android:layout_marginEnd="32dp"
         android:background="@drawable/rounded_edittext"
-        android:backgroundTint="@android:color/transparent"
         android:hint="Edad"
         android:inputType="number"
         android:padding="12dp"
@@ -95,7 +100,6 @@
         android:layout_marginTop="24dp"
         android:layout_marginEnd="32dp"
         android:background="@drawable/rounded_edittext"
-        android:backgroundTint="@android:color/transparent"
         android:hint="Contraseña"
         android:inputType="textPassword"
         android:padding="12dp"
@@ -111,7 +115,7 @@
         android:layout_marginStart="32dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="32dp"
-        android:backgroundTint="#0092E4"
+        android:backgroundTint="@color/blue_base"
         android:padding="12dp"
         android:text="Registrar"
         android:textColor="@android:color/white"
@@ -126,7 +130,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:text="¿Ya tienes cuenta? Iniciar Sesión"
-        android:textColor="@color/black"
+        android:textColor="@color/blue_base"
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
