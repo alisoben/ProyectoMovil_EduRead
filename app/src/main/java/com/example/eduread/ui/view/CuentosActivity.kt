@@ -2,7 +2,7 @@ package com.example.eduread.ui.view
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
@@ -10,13 +10,15 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.eduread.ui.adapter.CardAdapter
-import com.example.eduread.data.model.request.Libro
 import com.example.eduread.R
-import com.example.eduread.data.model.request.CardDataProvider
+import com.example.eduread.data.model.Cuento
 import com.example.eduread.ui.adapter.OnCardClickListener
+import com.example.eduread.ui.manager.CuentosManager
 
 class CuentosActivity : AppCompatActivity(), OnCardClickListener {
+
+    private lateinit var recyclerView: RecyclerView
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -34,17 +36,21 @@ class CuentosActivity : AppCompatActivity(), OnCardClickListener {
             startActivity(intent)
             finish()
         }
-
-        val recyclerView = findViewById<RecyclerView>(R.id.recyclerView)
+        recyclerView = findViewById(R.id.recyclerView)
         recyclerView.layoutManager = LinearLayoutManager(this)
-        val cardList = CardDataProvider.getSampleData()
-        recyclerView.adapter = CardAdapter(cardList, this)
+        val userId = intent.getIntExtra("usuario_id", 1)
+        Toast.makeText(this, "Entrando con ID de usuario: $userId", Toast.LENGTH_SHORT).show()
+        if (userId == -1) {
+            Toast.makeText(this, "ID no válido, usando ID predeterminado (1)", Toast.LENGTH_SHORT).show()
+        }
+        CuentosManager.fetchCuentosData(userId, this)
     }
-    override fun onCardClick(card: Libro) {
+
+    override fun onCardClick(card: Cuento) {
         val intent = Intent(this, LecturaActivity::class.java).apply {
             putExtra("card_title", card.title)
             putExtra("card_text", card.text)
-            putExtra("card_image", card.image01)
+            putExtra("card_image", card.image)
         }
         startActivity(intent)
     }
