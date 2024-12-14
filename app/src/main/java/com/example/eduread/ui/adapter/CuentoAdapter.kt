@@ -31,14 +31,9 @@ class CardAdapter(
         holder.imageView.setImageResource(card.image01)
         holder.titleTextView.text = card.title
 
+        // Notificar al listener que se hizo clic en el elemento
         holder.itemView.setOnClickListener {
-            val context = holder.itemView.context // Obtenemos el contexto desde el holder
-            val intent = Intent(context, CuentosActivity::class.java).apply {
-                putExtra("card_title", card.title)
-                putExtra("card_text", card.text) // Pasar el texto del card
-                putExtra("card_image", card.image01)
-            }
-            context.startActivity(intent)
+            listener.onCardClick(card)
         }
     }
 
