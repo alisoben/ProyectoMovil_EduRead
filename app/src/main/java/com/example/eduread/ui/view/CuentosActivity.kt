@@ -10,9 +10,9 @@ import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.eduread.ui.adapter.CardAdapter
-import com.example.eduread.data.request.Libro
+import com.example.eduread.data.model.request.Libro
 import com.example.eduread.R
-import com.example.eduread.data.request.CardDataProvider
+import com.example.eduread.data.model.request.CardDataProvider
 import com.example.eduread.ui.adapter.OnCardClickListener
 
 class CuentosActivity : AppCompatActivity(), OnCardClickListener {

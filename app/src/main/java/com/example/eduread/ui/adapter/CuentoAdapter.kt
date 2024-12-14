@@ -8,7 +8,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.eduread.R
-import com.example.eduread.data.request.Libro
+import com.example.eduread.data.model.request.Libro
 import com.example.eduread.ui.view.CuentosActivity
 
 class CardAdapter(

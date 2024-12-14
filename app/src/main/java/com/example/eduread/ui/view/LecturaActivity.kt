@@ -11,7 +11,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import com.example.eduread.R
-import com.example.eduread.ColorExtractor
+import com.example.eduread.utils.ColorExtractor
 
 class LecturaActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

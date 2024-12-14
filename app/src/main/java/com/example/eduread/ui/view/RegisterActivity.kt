@@ -11,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.eduread.R
+import com.example.eduread.ui.manager.RegisterManager
 
 class RegisterActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -32,7 +33,24 @@ class RegisterActivity : AppCompatActivity() {
 
         // Listener del botón (sin lógica por ahora)
         registerButton.setOnClickListener {
-            // Aquí iría la lógica de registro con la API en el futuro.
+            val nombre = usernameEditText.text.toString().trim()
+            val edad = ageEditText.text.toString().toIntOrNull()
+            val clave = passwordEditText.text.toString().trim()
+
+            if (nombre.isNotEmpty() && edad != null && clave.isNotEmpty()) {
+                RegisterManager.register(this, nombre, clave, edad) { success, message ->
+                    if (success) {
+                        Toast.makeText(this, "Registro exitoso: $message", Toast.LENGTH_SHORT).show()
+                        // Opcional: Redirigir a LoginActivity
+                        finish()
+                    } else {
+                        Toast.makeText(this, "Error: $message", Toast.LENGTH_SHORT).show()
+                    }
+                }
+            } else {
+                Toast.makeText(this, "Por favor, llena todos los campos correctamente", Toast.LENGTH_SHORT).show()
+            }
         }
-    }
+
+        }
 }
