@@ -1,6 +1,7 @@
 package com.example.eduread.ui.adapter
 
 import android.content.Intent
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -32,13 +33,16 @@ class CardAdapter(
         holder.titleTextView.text = card.title
 
         holder.itemView.setOnClickListener {
-            val context = holder.itemView.context // Obtenemos el contexto desde el holder
+            Log.d("CardAdapter", "Clic en el cuento: ${card.title}")
+            listener.onCardClick(card)
+            /*val context = holder.itemView.context // Obtenemos el contexto desde el holder
             val intent = Intent(context, CuentosActivity::class.java).apply {
                 putExtra("card_title", card.title)
                 putExtra("card_text", card.text) // Pasar el texto del card
                 putExtra("card_image", card.image01)
+                putExtra("cuento_id", card.idLib)
             }
-            context.startActivity(intent)
+            context.startActivity(intent)*/
         }
     }
 

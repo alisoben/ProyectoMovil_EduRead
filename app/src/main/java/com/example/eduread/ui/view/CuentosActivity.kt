@@ -2,6 +2,8 @@ package com.example.eduread.ui.view
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
+import android.widget.Button
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
@@ -33,9 +35,9 @@ class CuentosActivity : AppCompatActivity(), OnCardClickListener {
         recyclerView.adapter = CardAdapter(cardList, this)
     }
     override fun onCardClick(card: Libro) {
-        val intent = Intent(this, LecturaActivity::class.java)
-        intent.putExtra("card_title", card.title)
-        intent.putExtra("card_image", card.image01)
+        Log.d("CuentosActivity", "Cuento seleccionado: ${card.title}")
+        val intent = Intent(this, PreguntasActivity::class.java)
+        intent.putExtra("cuento_id", card.idLib)
         startActivity(intent)
     }
 }
