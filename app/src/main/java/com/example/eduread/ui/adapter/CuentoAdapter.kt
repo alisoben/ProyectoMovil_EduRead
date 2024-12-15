@@ -49,9 +49,9 @@ class CardAdapter(
                 starView.setImageResource(R.drawable.star_icon_gray)
             }
         }
-        /*holder.itemView.setOnClickListener {
-            Log.d("CardAdapter", "Clic en el cuento: ${card.title}")
-            listener.onCardClick(card)
+        holder.itemView.setOnClickListener {
+            /*Log.d("CardAdapter", "Clic en el cuento: ${card.title}")
+            listener.onCardClick(card)*/
             /*val context = holder.itemView.context // Obtenemos el contexto desde el holder
             val intent = Intent(context, CuentosActivity::class.java).apply {
                 putExtra("card_title", card.title)
@@ -60,10 +60,13 @@ class CardAdapter(
                 putExtra("cuento_id", card.idLib)
             }
             context.startActivity(intent)*/
-        }*/
+            listener.onCardClick(cuento)//PROHIBIDO BORRAR ESTO FUNCIONA--------------
+        }
+
     }
 
     override fun getItemCount(): Int = cuentos.size
+    //override fun getItemCount(): Int = cardList.size
 }
 
 interface OnCardClickListener {

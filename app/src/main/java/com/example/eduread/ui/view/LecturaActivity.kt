@@ -1,10 +1,12 @@
 package com.example.eduread.ui.view
 
+import android.content.Intent
 import android.graphics.Color
 import android.graphics.drawable.GradientDrawable
 import android.os.Bundle
 import android.view.View
 import android.view.WindowInsetsController
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
@@ -61,6 +63,11 @@ class LecturaActivity : AppCompatActivity() {
                     window.decorView.systemUiVisibility =
                         window.decorView.systemUiVisibility and View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR.inv()
                 }
+            }
+            val btnPregunta: Button = findViewById(R.id.buttonPregunta)
+            btnPregunta.setOnClickListener(){
+                val intent: Intent = Intent(this, PreguntasActivity:: class.java)
+                startActivity(intent)
             }
         } catch (e: Exception) {
             e.printStackTrace()
