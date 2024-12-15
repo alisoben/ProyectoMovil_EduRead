@@ -1,6 +1,7 @@
 package com.example.eduread.data.model.request
 
 import com.example.eduread.R
+import com.example.eduread.data.model.Pregunta
 
 data class Libro(
     val idLib: Int,
@@ -12,7 +13,7 @@ data class Libro(
 object CardDataProvider {
     fun getSampleData(): List<Libro> {
         return listOf(
-            Libro(0, "Caperucita Roja", "Había una vez una niña llamada Caperucita Roja que vivía en una aldea cerca del bosque. Siempre llevaba una capa con capucha de color rojo, por eso la llamaban así. Un día, su madre le pidió que llevara una canasta con comida a su abuelita, que estaba enferma y vivía en una casita al otro lado del bosque.\n" +
+            Libro(1, "Caperucita Roja", "Había una vez una niña llamada Caperucita Roja que vivía en una aldea cerca del bosque. Siempre llevaba una capa con capucha de color rojo, por eso la llamaban así. Un día, su madre le pidió que llevara una canasta con comida a su abuelita, que estaba enferma y vivía en una casita al otro lado del bosque.\n" +
                     "Antes de salir, su madre le advirtió:\n" +
                     "👩🏻:No hables con extraños y no te salgas del camino.\n" +
                     "Caperucita Roja prometió obedecer y partió felizmente hacia la casa de su abuela. Mientras caminaba, un lobo apareció en su camino. Era un animal grande y astuto, pero fingió ser amable.\n" +
@@ -30,15 +31,15 @@ object CardDataProvider {
                     "Caperucita y su abuelita se abrazaron, agradecidas por haber sido rescatadas. Desde ese día, Caperucita aprendió a no hablar con extraños y a obedecer siempre los consejos de su madre.\n" +
                     "Fin.\n" +
                     ".", R.drawable.img00),
-            Libro(1, "Ricitos de Oro", "text2", R.drawable.img10),
-            Libro(2, "Los Tres Cerditos", "text3", R.drawable.img20),
-            Libro(3, "Hansel y Gretel", "text4", R.drawable.img30),
-            Libro(4, "El Patito Feo", "text5", R.drawable.img40),
-            Libro(5, "Blancanieves", "text6", R.drawable.img50),
-            Libro(6, "La Cenicienta", "text7", R.drawable.img60),
-            Libro(7, "El Gato con Botas", "text8", R.drawable.img70),
-            Libro(8, "La Liebre y la Tortuga", "text9", R.drawable.img80),
-            Libro(9, "Rapunzel", "text10", R.drawable.img90)
+            Libro(2, "Ricitos de Oro", "text2", R.drawable.img10),
+            Libro(3, "Los Tres Cerditos", "text3", R.drawable.img20),
+            Libro(4, "Hansel y Gretel", "text4", R.drawable.img30),
+            Libro(5, "El Patito Feo", "text5", R.drawable.img40),
+            Libro(6, "Blancanieves", "text6", R.drawable.img50),
+            Libro(7, "La Cenicienta", "text7", R.drawable.img60),
+            Libro(8, "El Gato con Botas", "text8", R.drawable.img70),
+            Libro(9, "La Liebre y la Tortuga", "text9", R.drawable.img80),
+            Libro(10, "Rapunzel", "text10", R.drawable.img90)
         )
     }
 }

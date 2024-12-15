@@ -28,6 +28,9 @@
             android:name=".ui.view.LoginActivity"
             android:exported="false" />
         <activity
+            android:name=".ui.view.PreguntasActivity"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true"
             >
