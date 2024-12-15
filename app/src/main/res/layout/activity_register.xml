@@ -10,34 +10,22 @@
     tools:context=".ui.view.RegisterActivity">
 
     <!-- Recuadro decorativo -->
+
     <View
         android:id="@+id/headerBox"
         android:layout_width="match_parent"
         android:layout_height="150dp"
         android:background="@color/blue_base"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <!--<TextView
-        android:id="@+id/titleText"
-        style="@style/RegisterTitleStyle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="24dp"
-        android:text="Registro"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.027"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/headerBox" />-->
 
     <TextView
         android:id="@+id/titleText"
         style="@style/RegisterTitleStyle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="158dp"
+        android:layout_height="50dp"
         android:layout_marginStart="24dp"
         android:layout_marginTop="20dp"
         android:text="Registro"
@@ -108,31 +96,49 @@
         app:layout_constraintTop_toBottomOf="@id/ageEditText" />
 
     <!-- Botón de Registrar -->
+
+    <!-- Subtexto para iniciar sesión -->
+
     <Button
         android:id="@+id/registerButton"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="60dp"
         android:layout_marginEnd="32dp"
         android:backgroundTint="@color/blue_base"
-        android:padding="12dp"
+        android:textSize="20sp"
         android:text="Registrar"
         android:textColor="@android:color/white"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/passwordEditText" />
 
-    <!-- Subtexto para iniciar sesión -->
+    <TextView
+        android:id="@+id/texto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="¿Ya tienes cuenta?"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.269"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/registerButton" />
+
     <TextView
         android:id="@+id/loginSubText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:text="¿Ya tienes cuenta? Iniciar Sesión"
-        android:textColor="@color/blue_base"
+        android:layout_marginTop="40dp"
+        android:text="Iniciar Sesión"
+        android:textColor="#D5006D"
         android:textSize="14sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.681"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/registerButton" />
 </androidx.constraintlayout.widget.ConstraintLayout>

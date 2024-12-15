@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.eduread.R
@@ -38,10 +39,11 @@ class LoginActivity : AppCompatActivity() {
                 Toast.makeText(this, "Por favor, ingresa las credenciales", Toast.LENGTH_SHORT).show()
             }
         }
-        val btnRegistro: Button = findViewById(R.id.buttonRegistrar)
-        btnRegistro.setOnClickListener(){
-            val intent: Intent = Intent(this, RegisterActivity:: class.java)
+        val btnRegistro: TextView = findViewById(R.id.textRegistrar)
+        btnRegistro.setOnClickListener {
+            val intent: Intent = Intent(this, RegisterActivity::class.java)
             startActivity(intent)
         }
+
     }
 }
