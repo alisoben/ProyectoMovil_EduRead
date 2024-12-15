@@ -25,18 +25,24 @@ class LecturaActivity : AppCompatActivity() {
             setSupportActionBar(toolbar)
             toolbar.setNavigationOnClickListener { finish() }
 
-            // Obtener datos enviados desde MainActivity
+            // Obtener datos enviados desde CuentosActivity
             val cardTitle = intent.getStringExtra("card_title") ?: "Título no encontrado"
             val cardText = intent.getStringExtra("card_text") ?: "Texto no encontrado"
-            val cardImage = intent.getIntExtra("card_image", 0)
+            val cardImageName = intent.getStringExtra("card_image") ?: "img00.jpg"
 
             // Configurar contenido
             findViewById<TextView>(R.id.detail_title).text = cardTitle
             findViewById<TextView>(R.id.detail_text).text = cardText
-            val imageView = findViewById<ImageView>(R.id.detail_image)
-            imageView.setImageResource(cardImage)
 
-            // Extraer el color dominante de la imagen
+            // Configurar la imagen
+            val imageView = findViewById<ImageView>(R.id.detail_image)
+            val context = this
+            val imageResId = context.resources.getIdentifier(cardImageName.substringBeforeLast("."), "drawable", context.packageName)
+            if (imageResId != 0) {
+                imageView.setImageResource(imageResId)
+            } else {
+                imageView.setImageResource(R.drawable.img00)
+            }
             ColorExtractor.extractColors(imageView) { colors ->
                 toolbar.setBackgroundColor(colors.darkVibrantColor)
                 window.statusBarColor = colors.darkVibrantColor
@@ -47,11 +53,11 @@ class LecturaActivity : AppCompatActivity() {
                 gradientDrawable.setColors(
                     intArrayOf(colors.dominantColor, Color.TRANSPARENT)
                 )
-                if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.R) { // Para API nivel 30 y superior
+                if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.R) {
                     window.insetsController?.setSystemBarsAppearance(
                         0, WindowInsetsController.APPEARANCE_LIGHT_STATUS_BARS
                     )
-                } else if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.M) { // Para API nivel 23 a 29
+                } else if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.M) {
                     window.decorView.systemUiVisibility =
                         window.decorView.systemUiVisibility and View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR.inv()
                 }
