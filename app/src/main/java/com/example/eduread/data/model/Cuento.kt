@@ -6,6 +6,5 @@ data class Cuento(
     val title: String,
     val text: String,
     val image: String,
-    val preguntas: ArrayList<Pregunta>
 ) {
 }
