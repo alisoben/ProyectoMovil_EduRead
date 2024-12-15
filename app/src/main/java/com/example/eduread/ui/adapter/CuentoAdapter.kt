@@ -49,7 +49,7 @@ class CardAdapter(
                 starView.setImageResource(R.drawable.star_icon_gray)
             }
         }
-        holder.itemView.setOnClickListener {
+        /*holder.itemView.setOnClickListener {
             Log.d("CardAdapter", "Clic en el cuento: ${card.title}")
             listener.onCardClick(card)
             /*val context = holder.itemView.context // Obtenemos el contexto desde el holder
@@ -60,7 +60,7 @@ class CardAdapter(
                 putExtra("cuento_id", card.idLib)
             }
             context.startActivity(intent)*/
-        }
+        }*/
     }
 
     override fun getItemCount(): Int = cuentos.size

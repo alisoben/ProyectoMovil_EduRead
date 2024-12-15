@@ -5,11 +5,8 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
-import android.widget.EditText
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.eduread.R
-import com.example.eduread.ui.manager.LoginManager
 import com.example.eduread.ui.manager.LoginManager
 
 class LoginActivity : AppCompatActivity() {
@@ -18,9 +15,6 @@ class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
-
-        val inputUsuario: EditText = findViewById(R.id.editTextText)
-        val inputContrasena: EditText = findViewById(R.id.editTextTextPassword)
 
         val inputUsuario: EditText = findViewById(R.id.editTextText)
         val inputContrasena: EditText = findViewById(R.id.editTextTextPassword)
@@ -43,6 +37,11 @@ class LoginActivity : AppCompatActivity() {
             } else {
                 Toast.makeText(this, "Por favor, ingresa las credenciales", Toast.LENGTH_SHORT).show()
             }
+        }
+        val btnRegistro: Button = findViewById(R.id.buttonRegistrar)
+        btnRegistro.setOnClickListener(){
+            val intent: Intent = Intent(this, RegisterActivity:: class.java)
+            startActivity(intent)
         }
     }
 }
