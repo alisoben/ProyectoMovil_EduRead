@@ -66,7 +66,12 @@ class LecturaActivity : AppCompatActivity() {
             }
             val btnPregunta: Button = findViewById(R.id.buttonPregunta)
             btnPregunta.setOnClickListener(){
-                val intent: Intent = Intent(this, PreguntasActivity:: class.java)
+                val cuentoId = intent.getIntExtra("cuento_id", -1)//Agregué
+                val userId = intent.getIntExtra("usuario_id", -1)//Agregué
+                val intent = Intent(this, PreguntasActivity::class.java).apply {
+                    putExtra("cuento_id", cuentoId)//Agregué
+                    putExtra("usuario_id", userId)//Agregué
+                }
                 startActivity(intent)
             }
         } catch (e: Exception) {

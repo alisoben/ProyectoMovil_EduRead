@@ -10,11 +10,30 @@
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbarPreguntas"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="45dp"
+        android:paddingStart="5dp"
+        android:paddingEnd="5dp"
         android:background="@color/md_theme_primary"
-        android:elevation="4dp"
         app:layout_constraintTop_toTopOf="parent"
-        app:title="Responde las preguntas" />
+        app:navigationIcon="@drawable/previous_icon"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+        <!-- Botón de ayuda -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"/>
+
+        <ImageButton
+            android:id="@+id/help_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/help_icon"
+            android:layout_gravity="end|center_vertical"
+            android:layout_marginEnd="8dp"
+            android:background="?android:attr/selectableItemBackground" />
+
+    </androidx.appcompat.widget.Toolbar>
 
     <!-- RecyclerView -->
     <androidx.recyclerview.widget.RecyclerView
@@ -27,6 +46,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:paddingBottom="100dp"
         android:clipToPadding="false" />
+
     <!-- Botón Guardar -->
     <Button
         android:id="@+id/btnGuardar"

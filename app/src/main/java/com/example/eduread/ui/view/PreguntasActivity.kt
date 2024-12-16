@@ -3,8 +3,10 @@ package com.example.eduread.ui.view
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
+import android.widget.ImageButton
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.Toolbar
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.eduread.R
@@ -23,6 +25,18 @@ class PreguntasActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_preguntas)
 
+        // Agregué
+        val toolbar = findViewById<Toolbar>(R.id.toolbarPreguntas)
+        setSupportActionBar(toolbar)
+        toolbar.setNavigationOnClickListener {
+            finish() // Retrocede a la actividad anterior (LecturaActivity)
+        }
+
+        // Agregué
+        val helpButton: ImageButton = findViewById(R.id.help_icon)
+        helpButton.setOnClickListener {
+            Toast.makeText(this, "Aquí puedes responder las preguntas seleccionando Sí o No.", Toast.LENGTH_SHORT).show()
+        }
 
         val cuentoId = intent.getIntExtra("cuento_id", -1)
         cargarPreguntas(cuentoId)
@@ -58,10 +72,12 @@ class PreguntasActivity : AppCompatActivity() {
         }
 
         val arrayRespuestas = respuestasSeleccionadas.values.joinToString(", ")
+        val userId = intent.getIntExtra("usuario_id", -1)//Agregué
+
         // Llamar al repositorio para enviar las respuestas
         val cuentoRepository = CuentoRepository()
         cuentoRepository.reponderPreguntasCuento(
-            id_usuario = 4,
+            id_usuario = userId,//Modifiqué
             id_cuento = idCuento,
             array_respuestas = arrayRespuestas
         ) { response ->

@@ -56,10 +56,13 @@ class CuentosActivity : AppCompatActivity(), OnCardClickListener {
         intent.putExtra("cuento_id", card.idLib)
     */
     override fun onCardClick(card: Cuento) {
+        val userId = intent.getIntExtra("usuario_id", -1)//Agregué
         val intent = Intent(this, LecturaActivity::class.java).apply {
             putExtra("card_title", card.title)
             putExtra("card_text", card.text)
             putExtra("card_image", card.image)
+            putExtra("cuento_id", card.id_cuento) //Agregué
+            putExtra("usuario_id", userId)//Agregué
         }
 
         startActivity(intent)

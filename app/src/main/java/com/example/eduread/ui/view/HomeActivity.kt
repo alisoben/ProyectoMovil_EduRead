@@ -10,6 +10,7 @@ import androidx.core.view.WindowInsetsCompat
 import com.example.eduread.R
 
 class HomeActivity : AppCompatActivity() {
+    private var userId: Int = -1//Agregué
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -19,10 +20,14 @@ class HomeActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+
+        userId = intent.getIntExtra("usuario_id", -1)//Agregué
+
         val btnCuentos: Button = findViewById(R.id.buttonCuentos)
         btnCuentos.setOnClickListener(){
-            val intent2: Intent = Intent(this, CuentosActivity:: class.java)
-            startActivity(intent2)
+            val intent: Intent = Intent(this, CuentosActivity:: class.java)//agregué cambiar de intent 2 a intent
+            intent.putExtra("usuario_id", userId)//Agregué
+            startActivity(intent)//intent2 ->intent
         }
 
     }
