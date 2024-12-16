@@ -52,22 +52,16 @@ class RegisterActivity : AppCompatActivity() {
                 RegisterManager.register(this, nombre, clave, edad) { success, message ->
                     if (success) {
                         showSuccessDialog("¡Registro exitoso!", "Bienvenido a EduRead.")
-                        //Toast.makeText(this, "Registro exitoso: $message", Toast.LENGTH_SHORT).show()
-                        // Opcional: Redirigir a LoginActivity
-                        //finish()
                     } else {
                         showErrorDialog("Error: $message")
-                        //Toast.makeText(this, "Error: $message", Toast.LENGTH_SHORT).show()
                     }
                 }
             } else {
                 showErrorDialog("Por favor, completa todos los campos correctamente.")
-                //Toast.makeText(this, "Por favor, llena todos los campos correctamente", Toast.LENGTH_SHORT).show()
             }
         }
         //Listener del iniciar sesion
         loginSubText.setOnClickListener {
-            // Redirige al LoginActivity
             val intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)
         }
@@ -91,7 +85,7 @@ class RegisterActivity : AppCompatActivity() {
         dialog.show()
 
         // Personalizar tamaño del cuadro de diálogo
-        val width = resources.displayMetrics.widthPixels * 0.9 // 90% del ancho de la pantalla
+        val width = resources.displayMetrics.widthPixels * 0.9
         dialog.window?.setLayout(width.toInt(), WindowManager.LayoutParams.WRAP_CONTENT)
     }
 }
