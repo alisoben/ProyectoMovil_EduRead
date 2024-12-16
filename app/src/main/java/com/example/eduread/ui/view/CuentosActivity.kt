@@ -2,8 +2,6 @@ package com.example.eduread.ui.view
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
-import android.widget.Button
 import android.widget.Toast
 
 import androidx.activity.enableEdgeToEdge
@@ -26,7 +24,7 @@ class CuentosActivity : AppCompatActivity(), OnCardClickListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_cuentos2)
+        setContentView(R.layout.activity_cuentos)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
@@ -51,13 +49,6 @@ class CuentosActivity : AppCompatActivity(), OnCardClickListener {
         }
         CuentosManager.fetchCuentosData(userId, this)
     }
-
-    /*
-    override fun onCardClick(card: Libro) {
-        Log.d("CuentosActivity", "Cuento seleccionado: ${card.title}")
-        val intent = Intent(this, PreguntasActivity::class.java)
-        intent.putExtra("cuento_id", card.idLib)
-    */
     override fun onCardClick(card: Cuento) {
         val userId = UsuarioStatic.id_usuario_static
         val intent = Intent(this, LecturaActivity::class.java).apply {

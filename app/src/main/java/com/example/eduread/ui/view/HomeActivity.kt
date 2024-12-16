@@ -10,6 +10,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.eduread.MainActivity
 import com.example.eduread.R
+import com.example.eduread.ui.estatico.UsuarioStatic
 
 class HomeActivity : AppCompatActivity() {
     private var userId: Int = -1//Agregué
@@ -31,8 +32,8 @@ class HomeActivity : AppCompatActivity() {
         val textViewNombre: TextView = findViewById(R.id.textViewNombre)
         val textViewEdad: TextView = findViewById(R.id.textViewEdad)
 
-        textViewNombre.text = nombre
-        textViewEdad.text = "Edad: $edad años"
+        textViewNombre.text = UsuarioStatic.nombre_static
+        textViewEdad.text = "Edad: ${UsuarioStatic.edad_static} años"
 
 
         userId = intent.getIntExtra("usuario_id", -1)//Agregué

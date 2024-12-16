@@ -22,6 +22,8 @@ class LoginManager {
                         val loginResponse = response.body()
                         if (loginResponse != null && loginResponse.status == 200) {
                             UsuarioStatic.id_usuario_static= loginResponse.data.id_usuario
+                            UsuarioStatic.nombre_static= loginResponse.data.nombre
+                            UsuarioStatic.edad_static= loginResponse.data.edad
                             val idUsuario = loginResponse.data.id_usuario
                             val edad = loginResponse.data.edad
                             callback(true, "Bienvenido", idUsuario, edad)
