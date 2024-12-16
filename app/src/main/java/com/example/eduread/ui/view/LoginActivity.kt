@@ -9,6 +9,8 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.eduread.R
 import com.example.eduread.ui.manager.LoginManager
+import com.example.eduread.data.model.response.LoginResponse
+
 
 class LoginActivity : AppCompatActivity() {
 
@@ -29,6 +31,8 @@ class LoginActivity : AppCompatActivity() {
                     if (success) {
                         Toast.makeText(this, "Bienvenido, $nombre", Toast.LENGTH_SHORT).show()
                         val intent = Intent(this, HomeActivity::class.java)
+                        intent.putExtra("nombre", nombre)
+                        intent.putExtra("edad", userId)
                         intent.putExtra("usuario_id", userId)
                         startActivity(intent)
                     } else {

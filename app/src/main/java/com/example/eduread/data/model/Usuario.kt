@@ -4,7 +4,7 @@ data class Usuario(
     val id_usuario: Int,
     var nombre: String,
     var clave: String,
-    var edad: Int
+    val edad: Int
 ) {
 
 }
