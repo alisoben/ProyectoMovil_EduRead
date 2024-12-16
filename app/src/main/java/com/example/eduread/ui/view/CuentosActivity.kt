@@ -16,6 +16,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.eduread.R
 import com.example.eduread.data.model.Cuento
 import com.example.eduread.ui.adapter.OnCardClickListener
+import com.example.eduread.ui.estatico.UsuarioStatic
 import com.example.eduread.ui.manager.CuentosManager
 
 class CuentosActivity : AppCompatActivity(), OnCardClickListener {
@@ -41,7 +42,8 @@ class CuentosActivity : AppCompatActivity(), OnCardClickListener {
         }
         recyclerView = findViewById(R.id.recyclerView)
         recyclerView.layoutManager = LinearLayoutManager(this)
-        val userId = intent.getIntExtra("usuario_id", 1)
+        //esto se queda
+        val userId = UsuarioStatic.id_usuario_static
         Toast.makeText(this, "Entrando con ID de usuario: $userId", Toast.LENGTH_SHORT).show()
         if (userId == -1) {
             Toast.makeText(this, "ID no válido, usando ID predeterminado (1)", Toast.LENGTH_SHORT).show()
