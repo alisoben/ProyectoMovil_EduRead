@@ -1,5 +1,6 @@
 package com.example.eduread.ui.view
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
@@ -9,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.eduread.MainActivity
 import com.example.eduread.R
 import com.example.eduread.data.model.Pregunta
 import com.example.eduread.ui.adapter.PreguntasAdapter
@@ -71,7 +73,7 @@ class PreguntasActivity : AppCompatActivity() {
             return
         }
 
-        val arrayRespuestas = respuestasSeleccionadas.values.joinToString(", ")
+        val arrayRespuestas = respuestasSeleccionadas.values.joinToString(",")
         val userId = intent.getIntExtra("usuario_id", -1)//Agregué
 
         // Llamar al repositorio para enviar las respuestas
@@ -84,9 +86,12 @@ class PreguntasActivity : AppCompatActivity() {
             if (response?.status == 200) {
                 Toast.makeText(this, "Respuestas enviadas con éxito.", Toast.LENGTH_SHORT).show()
                 Log.d("PreguntasActivity", "Respuesta del servidor: ${response}")
+                val intent10 : Intent = Intent(this, CuentosActivity:: class.java)
+                startActivity((intent10))
             } else {
                 Toast.makeText(this, "Error al enviar las respuestas.", Toast.LENGTH_SHORT).show()
             }
         }
+
     }
 }

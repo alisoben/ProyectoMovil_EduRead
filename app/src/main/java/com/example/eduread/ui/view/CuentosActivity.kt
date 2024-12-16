@@ -44,6 +44,7 @@ class CuentosActivity : AppCompatActivity(), OnCardClickListener {
         recyclerView.layoutManager = LinearLayoutManager(this)
         //esto se queda
         val userId = UsuarioStatic.id_usuario_static
+        println("usuario:"+userId)
         Toast.makeText(this, "Entrando con ID de usuario: $userId", Toast.LENGTH_SHORT).show()
         if (userId == -1) {
             Toast.makeText(this, "ID no válido, usando ID predeterminado (1)", Toast.LENGTH_SHORT).show()
@@ -58,7 +59,7 @@ class CuentosActivity : AppCompatActivity(), OnCardClickListener {
         intent.putExtra("cuento_id", card.idLib)
     */
     override fun onCardClick(card: Cuento) {
-        val userId = intent.getIntExtra("usuario_id", -1)//Agregué
+        val userId = UsuarioStatic.id_usuario_static
         val intent = Intent(this, LecturaActivity::class.java).apply {
             putExtra("card_title", card.title)
             putExtra("card_text", card.text)

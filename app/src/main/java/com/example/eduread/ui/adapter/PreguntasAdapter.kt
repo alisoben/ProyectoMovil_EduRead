@@ -33,7 +33,7 @@ class PreguntasAdapter(
         holder.preguntaTexto.text = pregunta.contenido
 
         holder.btnSi.setOnClickListener {
-            onRespuestaSeleccionada(pregunta.id_pregunta, "sí")
+            onRespuestaSeleccionada(pregunta.id_pregunta, "si")
             holder.btnSi.setBackgroundResource(R.drawable.background_pregunta_opciones_seleccionada)
             holder.btnNo.setBackgroundResource(R.drawable.background_pregunta_opciones)
             holder.btnSi.setTextColor(ContextCompat.getColor(holder.itemView.context, R.color.white))
