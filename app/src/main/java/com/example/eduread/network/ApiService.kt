@@ -8,6 +8,7 @@ import com.example.eduread.data.model.response.LoginResponse
 import com.example.eduread.data.model.response.PreguntasResponse
 import com.example.eduread.data.model.response.RegistrarUsuarioResponse;
 import com.example.eduread.data.model.response.ResponderResponse
+import com.example.eduread.data.model.response.UsuarioResponse
 
 import retrofit2.Call
 import retrofit2.http.Body
@@ -26,4 +27,6 @@ interface ApiService {
     fun RespuestaPreguntasCuento(@Body testRequest: ResponderRequest): Call<ResponderResponse>
     @GET("cuento_service/v1/cuento/preguntas/{id_cuento}")
     fun obtenerPreguntas(@Path("id_cuento") idCuento: Int): Call<PreguntasResponse>
+    @GET("usuario_service/v1/usuario/{id_usuario}")
+    fun getUsuario(@Path("id_usuario") idUsurio:Int): Call<UsuarioResponse>
 }

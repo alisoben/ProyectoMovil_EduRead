@@ -3,10 +3,12 @@ package com.example.eduread.ui.view
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
+import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.example.eduread.MainActivity
 import com.example.eduread.R
 
 class HomeActivity : AppCompatActivity() {
@@ -15,11 +17,23 @@ class HomeActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_home)
+
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+
+        // Recuperar datos del intent
+        val nombre = intent.getStringExtra("nombre") ?: "Usuario"
+        val edad = intent.getIntExtra("edad", 0)
+
+        val textViewNombre: TextView = findViewById(R.id.textViewNombre)
+        val textViewEdad: TextView = findViewById(R.id.textViewEdad)
+
+        textViewNombre.text = nombre
+        textViewEdad.text = "Edad: $edad años"
+
 
         userId = intent.getIntExtra("usuario_id", -1)//Agregué
 
@@ -29,6 +43,12 @@ class HomeActivity : AppCompatActivity() {
             intent.putExtra("usuario_id", userId)//Agregué
             startActivity(intent)//intent2 ->intent
         }
+        val btnCerrarSeccion: Button = findViewById(R.id.buttonCerrarSesion)
+        btnCerrarSeccion.setOnClickListener(){
+            val intent3 : Intent = Intent(this,MainActivity:: class.java)
+            startActivity((intent3))
+        }
+
 
     }
 }
