@@ -5,13 +5,13 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/md_theme_background"
     tools:context=".ui.view.HomeActivity">
 
     <View
         android:id="@+id/headerBox"
-        android:layout_width="426dp"
-        android:layout_height="285dp"
-        android:layout_marginTop="4dp"
+        android:layout_width="418dp"
+        android:layout_height="185dp"
         android:background="@color/blue_base"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.533"
@@ -35,7 +35,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Hola"
-            android:textColor="#FFFFFF"
+            android:layout_marginLeft="8dp"
+            android:textColor="@color/white"
             android:textSize="40sp" />
 
         <TextView
@@ -44,7 +45,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:text="Usuario"
-            android:textColor="#FFFFFF"
+            android:textColor="@color/white"
             android:textSize="40sp"
             android:textStyle="bold" />
 
@@ -57,7 +58,8 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:text="Edad"
-        android:textColor="#FFFFFF"
+        android:layout_marginLeft="8dp"
+        android:textColor="@color/white"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="@id/userContainer"
         app:layout_constraintTop_toBottomOf="@id/userContainer" />
@@ -66,13 +68,14 @@
         android:id="@+id/textViewBienvenida"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="48dp"
         android:gravity="center"
         android:text="Bienvenido a Edu Read, tu escape a la fantasía"
         android:textColor="@color/black"
-        android:textSize="20sp"
+        android:textSize="32sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/headerBox" />
 
@@ -80,12 +83,13 @@
         android:id="@+id/textViewSubtitulo"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="40dp"
         android:gravity="center"
         android:text="Actívate con los cuentos más emocionantes del momento"
         android:textColor="@color/black"
-        android:textSize="16sp"
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/textViewBienvenida" />
 
@@ -93,29 +97,31 @@
         android:id="@+id/buttonCuentos"
         android:layout_width="323dp"
         android:layout_height="60dp"
-        android:backgroundTint="#3F51B5"
+        android:backgroundTint="@color/azul_cobalto"
         android:text="Leer Cuentos"
-        android:textSize="25sp"
+        android:textSize="22sp"
+        android:textColor="@color/white"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.613"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewSubtitulo"
-        app:layout_constraintVertical_bias="0.231" />
+        app:layout_constraintVertical_bias="0.211" />
 
     <Button
         android:id="@+id/buttonCerrarSesion"
         android:layout_width="321dp"
         android:layout_height="58dp"
-        android:backgroundTint="#3F51B5"
+        android:backgroundTint="@color/azul_cobalto"
         android:text="Cerrar Sesión"
-        android:textSize="25sp"
+        android:textSize="22sp"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.6"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/buttonCuentos"
-        app:layout_constraintVertical_bias="0.212" />
+        app:layout_constraintVertical_bias="0.27" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

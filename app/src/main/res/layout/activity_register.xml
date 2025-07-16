@@ -6,20 +6,19 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/md_theme_background"
-    android:padding="16dp"
     tools:context=".ui.view.RegisterActivity">
 
     <!-- Recuadro decorativo -->
 
     <View
         android:id="@+id/headerBox"
-        android:layout_width="match_parent"
-        android:layout_height="150dp"
-        android:background="@color/blue_base"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        android:layout_width="420dp"
+        android:layout_height="170dp"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:background="@color/blue_base"
+        tools:layout_editor_absoluteX="-3dp"
+        tools:layout_editor_absoluteY="-13dp" />
 
     <TextView
         android:id="@+id/titleText"
@@ -59,6 +58,8 @@
         android:hint="Nombre"
         android:inputType="text"
         android:padding="12dp"
+        android:textColor="@color/black"
+        android:textColorHint="@color/taupe_gray"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/subtitleText" />
@@ -75,6 +76,8 @@
         android:hint="Edad"
         android:inputType="number"
         android:padding="12dp"
+        android:textColor="@color/black"
+        android:textColorHint="@color/taupe_gray"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/nameEditText" />
@@ -91,6 +94,8 @@
         android:hint="Contraseña"
         android:inputType="textPassword"
         android:padding="12dp"
+        android:textColor="@color/black"
+        android:textColorHint="@color/taupe_gray"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/ageEditText" />
@@ -106,6 +111,8 @@
         android:hint="Confirmar contraseña"
         android:inputType="textPassword"
         android:padding="12dp"
+        android:textColor="@color/black"
+        android:textColorHint="@color/taupe_gray"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/passwordEditText" />
@@ -137,7 +144,7 @@
         android:layout_marginTop="40dp"
         android:text="¿Ya tienes cuenta?"
         android:textColor="@color/black"
-        android:textSize="14sp"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.269"
         app:layout_constraintStart_toStartOf="parent"
@@ -149,11 +156,51 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
         android:text="Iniciar Sesión"
-        android:textColor="#D5006D"
-        android:textSize="14sp"
+        android:textColor="@color/red"
+        android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.681"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHorizontal_bias="0.066"
+        app:layout_constraintStart_toEndOf="@+id/texto"
         app:layout_constraintTop_toBottomOf="@id/registerButton" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="44dp"
+        android:text="¡Qué emocióntenerte aquí!"
+        android:textColor="@color/white"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toEndOf="@+id/headerBox"
+        app:layout_constraintHorizontal_bias="0.063"
+        app:layout_constraintStart_toStartOf="@+id/headerBox"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Regístrate y empecemos"
+        android:textColor="@color/white"
+        android:textSize="22sp"
+        app:layout_constraintBottom_toBottomOf="@+id/headerBox"
+        app:layout_constraintEnd_toEndOf="@+id/headerBox"
+        app:layout_constraintHorizontal_bias="0.155"
+        app:layout_constraintStart_toStartOf="@+id/headerBox"
+        app:layout_constraintTop_toBottomOf="@+id/textView3"
+        app:layout_constraintVertical_bias="0.274" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="144dp"
+        android:layout_height="176dp"
+        android:layout_marginStart="272dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/imgleyendo" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

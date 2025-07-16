@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name"></string>
+    <string name="app_name">EduRead</string>
     <string name="toolbar_title">Bienvenido</string>
     <string name="titulo_bar">Título</string>
     <string name="detalles_bar">Detalle</string>
