@@ -22,6 +22,23 @@ class LoginActivity : AppCompatActivity() {
         val btnIngresar: Button = findViewById(R.id.buttonIngresarHome)
 
         btnIngresar.setOnClickListener {
+
+            // ⚠SOLO PARA PRUEBAS - Salto automático al HomeActivity //BORRAR
+            val saltarLogin = true
+            if (saltarLogin) {
+                val nombre = "UsuarioPrueba"
+                val edad = 20
+                val userId = 1
+                val intent = Intent(this, HomeActivity::class.java)
+                intent.putExtra("nombre", nombre)
+                intent.putExtra("edad", edad)
+                intent.putExtra("usuario_id", userId)
+                startActivity(intent)
+                finish()
+
+            }
+
+            /* //QUITAR COMENTARIO
             val nombre = inputUsuario.text.toString().trim()
             val clave = inputContrasena.text.toString().trim()
             if (nombre.isNotEmpty() && clave.isNotEmpty()) {
@@ -40,6 +57,8 @@ class LoginActivity : AppCompatActivity() {
             } else {
                 Toast.makeText(this, "Por favor, ingresa las credenciales", Toast.LENGTH_SHORT).show()
             }
+
+             */
         }
 
         val btnRegistro: TextView = findViewById(R.id.textRegistrar)

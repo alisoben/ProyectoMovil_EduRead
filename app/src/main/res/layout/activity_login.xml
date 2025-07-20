@@ -5,73 +5,73 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F5F7FB"
+    android:background="@color/md_theme_background"
     tools:context=".ui.view.LoginActivity">
 
     <!-- Título de Bienvenida -->
+
 
     <View
         android:id="@+id/headerBox"
         android:layout_width="426dp"
         android:layout_height="285dp"
-        android:layout_marginTop="4dp"
         android:background="@color/blue_base"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.533"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="184dp"
         android:layout_height="196dp"
-        android:layout_marginStart="120dp"
         android:layout_marginTop="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/logo_eduread" />
 
     <TextView
-            android:id="@+id/title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="¡Bienvenido!"
-            android:textColor="#FFFFFF"
-            android:textSize="34sp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.275" />
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="¡Bienvenido!"
+        android:textColor="@color/white"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.513"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2"
+        app:layout_constraintVertical_bias="0.0" />
 
-        <TextView
-            android:id="@+id/subtitle"
-            android:layout_width="275dp"
-            android:layout_height="24dp"
-            android:layout_marginTop="16dp"
-            android:text="Es bueno verte de nuevo, Inicia Sesión!"
-            android:textColor="#FFFFFF"
-            android:textSize="16sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.544"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/title" />
+    <TextView
+        android:id="@+id/subtitle"
+        android:layout_width="277dp"
+        android:layout_height="26dp"
+        android:layout_marginTop="4dp"
+        android:text="Es bueno verte de nuevo. Inicia Sesión!"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.514"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/title" />
 
     <EditText
         android:id="@+id/editTextText"
-        android:layout_width="334dp"
-        android:layout_height="57dp"
+        android:layout_width="333dp"
+        android:layout_height="54dp"
         android:layout_marginStart="32dp"
         android:layout_marginTop="60dp"
         android:layout_marginEnd="32dp"
         android:background="@drawable/rounded_edittext"
         android:hint="Nombre"
-        android:inputType="text"
         android:padding="12dp"
+        android:textColor="@color/black"
+        android:textColorHint="@color/taupe_gray"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.461"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/subtitle" />
 
@@ -86,8 +86,9 @@
         android:hint="Contraseña"
         android:inputType="textPassword"
         android:padding="12dp"
+        android:textColor="@color/black"
+        android:textColorHint="@color/taupe_gray"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.461"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/editTextText" />
 
@@ -99,6 +100,7 @@
         android:paddingTop="12dp"
         android:paddingBottom="12dp"
         android:text="Log in"
+        android:textColor="@color/white"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -112,7 +114,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="¿Aún no tienes tu cuenta?"
-        android:textColor="#000000"
+        android:textColor="@color/black"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.302"
@@ -124,13 +126,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="Registrase"
-        android:textColor="#D5006D"
+        android:text="Regístrate"
+        android:textColor="@color/red"
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.757"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHorizontal_bias="0.081"
+        app:layout_constraintStart_toEndOf="@+id/textNoAccount"
         app:layout_constraintTop_toBottomOf="@id/buttonIngresarHome" />
 
 

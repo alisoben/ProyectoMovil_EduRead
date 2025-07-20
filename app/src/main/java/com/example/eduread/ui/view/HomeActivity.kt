@@ -32,8 +32,10 @@ class HomeActivity : AppCompatActivity() {
         val textViewNombre: TextView = findViewById(R.id.textViewNombre)
         val textViewEdad: TextView = findViewById(R.id.textViewEdad)
 
-        textViewNombre.text = UsuarioStatic.nombre_static
-        textViewEdad.text = "Edad: ${UsuarioStatic.edad_static} años"
+        //textViewNombre.text = UsuarioStatic.nombre_static // borrado
+        textViewNombre.text = nombre
+        //textViewEdad.text = "Edad: ${UsuarioStatic.edad_static} años" // borrado
+        textViewEdad.text = "Edad: ${edad} años"
 
 
         userId = intent.getIntExtra("usuario_id", -1)//Agregué
