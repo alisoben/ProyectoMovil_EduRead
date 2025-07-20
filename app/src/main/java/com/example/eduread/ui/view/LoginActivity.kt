@@ -23,7 +23,7 @@ class LoginActivity : AppCompatActivity() {
 
         btnIngresar.setOnClickListener {
 
-            // ⚠SOLO PARA PRUEBAS - Salto automático al HomeActivity //BORRAR
+            /* ⚠SOLO PARA PRUEBAS - Salto automático al HomeActivity //BORRAR
             val saltarLogin = true
             if (saltarLogin) {
                 val nombre = "UsuarioPrueba"
@@ -36,9 +36,7 @@ class LoginActivity : AppCompatActivity() {
                 startActivity(intent)
                 finish()
 
-            }
-
-            /* //QUITAR COMENTARIO
+            }*/
             val nombre = inputUsuario.text.toString().trim()
             val clave = inputContrasena.text.toString().trim()
             if (nombre.isNotEmpty() && clave.isNotEmpty()) {
@@ -57,8 +55,6 @@ class LoginActivity : AppCompatActivity() {
             } else {
                 Toast.makeText(this, "Por favor, ingresa las credenciales", Toast.LENGTH_SHORT).show()
             }
-
-             */
         }
 
         val btnRegistro: TextView = findViewById(R.id.textRegistrar)
