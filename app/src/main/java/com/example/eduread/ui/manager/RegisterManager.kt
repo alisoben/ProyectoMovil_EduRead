@@ -18,14 +18,20 @@ class RegisterManager {
                 override fun onResponse(call: Call<RegistrarUsuarioResponse>, response: Response<RegistrarUsuarioResponse>) {
                     if (response.isSuccessful) {
                         val registrarResponse = response.body()
-                        if (registrarResponse != null && registrarResponse.status == 200) {
-                            callback(true, registrarResponse.message)
+                        if (registrarResponse != null) {
+                            if (registrarResponse.status in 200..299) {
+                                callback(true, registrarResponse.message)
+                            } else {
+                                callback(false, "Error del servidor: ${registrarResponse.message}")
+                            }
+
                         } else {
-                            callback(false, registrarResponse?.message ?: "Error desconocido")
+                            callback(false, "Respuesta nula del servidor.")
                         }
                     } else {
-                        callback(false, "Error: ${response.message()}")
+                        callback(false, "Error: ${response.code()} - ${response.message()}")
                     }
+
                 }
 
                 override fun onFailure(call: Call<RegistrarUsuarioResponse>, t: Throwable) {
