@@ -45,6 +45,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:paddingBottom="100dp"
+        android:background="@color/md_theme_inversePrimary"
         android:clipToPadding="false" />
 
     <!-- Botón Guardar -->
