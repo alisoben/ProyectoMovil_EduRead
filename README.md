@@ -1,6 +1,6 @@
 ## EduRead: Aplicación Móvil para Mejorar la Habilidad Lectora en Niños
 
-## Grupo 1 : Bar de koltin 
+## Grupo 1 : Bar de kotLin 
 - Galvez Arango, Alder Benjamin
 - cuchillo Huillcaya diego armando
 - Fernández Dávila David Jhonatan
